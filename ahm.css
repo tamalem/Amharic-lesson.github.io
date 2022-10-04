@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+* {
+  background-color: rgb(230, 235, 252);
+}
+
+.but {
+  border: 4px solid gray;
+  padding: 10px 10px 10px 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.but .button {
+  background-color: rgb(37, 160, 160);
+  border: none;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  margin: 20px 20px 20px 20px;
+}
+.but .button:hover {
+  opacity: 0.8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.btn, .button::before, .button {
+  border: 2px solid #e2d0a8;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 100px;
+  min-height: 62px;
+}
+
+.title {
+  color: #7b6229;
+  font-family: "Lora", serif;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.button {
+  background: #efe5ce;
+  color: #7b6229;
+  font-family: "Lora", serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transform: skewX(20deg);
+  min-height: 50px;
+}
+.button::before {
+  content: attr(data-label);
+  background: #F5EFE1;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: -1rem;
+  left: 1rem;
+  z-index: -1;
+  transition: all 0.5s ease;
+}
+.button:hover::before {
+  top: 2px;
+  left: -2px;
+}
+.button:focus {
+  outline: none;
+}/*# sourceMappingURL=ahm.css.map */
