@@ -13,6 +13,7 @@
             <h1>Amharic Alphabets</h1>
         </div>
         <div class="but">
+            <div class="le">
         <button class="button" value="sound" onclick="playmusic()">
             ሀ ha
         </button>
@@ -34,6 +35,7 @@
         <button class="button" value="sound" onclick="playmusic7()">
             ሆ ho
         </button>
+    </div>
         <!-- ለ -->
         <div class="le">
         <button class="button" value="sound" onclick="playmusic8()">
@@ -59,7 +61,7 @@
         </button>
     </div>
             <!-- ሐ -->
-            <div class="ha">
+            <div class="le">
                 <button class="button" value="sound" onclick="playmusic()">
                    ሐ ḥa
                 </button>
@@ -83,7 +85,7 @@
                 </button>
             </div>
              <!-- መ -->
-        <div class="ma">
+        <div class="le">
             <button class="button" value="sound" onclick="playmusic15()">
                 መ ma                
             </button>
@@ -107,7 +109,7 @@
             </button>
         </div>
          <!-- ሠ -->
-         <div class="sa">
+         <div class="le">
             <button class="button" value="sound" onclick="playmusic22()">
                 ሠ  śa            
             </button>
@@ -131,7 +133,7 @@
             </button>
         </div>
          <!-- ረ  -->
-         <div class="ra">
+         <div class="le">
             <button class="button" value="sound" onclick="playmusic29()">
                 ረ ra
             </button>
@@ -155,7 +157,7 @@
             </button>
         </div>
          <!-- ሰ -->
-         <div class="sa">
+         <div class="le">
             <button class="button" value="sound" onclick="playmusic22()">
                 ሰ sa              
             </button>
@@ -824,6 +826,30 @@
         </div>
     </div>
     </div>
+    <!-- Translation Section -->
+    <div class="translation-section">
+        <h2>Translate English to Amharic</h2>
+        <input type="text" id="englishText" placeholder="Type English text here">
+        <button onclick="translateText()">Translate</button>
+        <div id="amharicText"></div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function translateText() {
+        const text = $('#englishText').val();
+        $.ajax({
+            url: `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=am&dt=t&q=${text}`,
+            success: function(response) {
+                const translatedText = response[0][0][0];
+                $('#amharicText').text(translatedText);
+            },
+            error: function() {
+                $('#amharicText').text('Translation failed.');
+            }
+        });
+    }
+</script>
   <script src="ahm.js"></script>
 </body>
 
